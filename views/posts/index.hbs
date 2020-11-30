@@ -1,21 +1,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    <div>
+    <h1 class="title">{{title}}</h1>
+
+    <body>
       <form action="/posts">
-        <button type="submit" id="home">Home</button>
+        <button type="submit" class="button-group" id="home">Home</button>
       </form>
-    </div>
-    <div>
+
       <form action="/profile">
         <button type="submit" id="profile">Profile</button>
       </form>
-    </div>
 
-    <div>
-      <form action="/login" method="get">
+      <form action="/login">
         <button type="submit" id="logout">Log out</button>
       </form>
     </div>
+
     <h1>Timeline</h1>
 
     <form id="new-post-form" action="/posts" method="post">
@@ -34,3 +34,4 @@
         {{/each}}
       </ul>
     </div>
+  </body>
