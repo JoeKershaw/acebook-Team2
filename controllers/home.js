@@ -28,6 +28,10 @@ var HomeController = {
       req.session.test = 'tomato';
       req.session.username = req.body.username;
       req.session.name = data.name;
+      req.session.password = req.body.password;
+      req.session.Gender = data.Gender;
+      req.session.Birthday = data.Birthday;
+      req.session.About = data.About;
 
 
       res.status(201).redirect('/profile');
@@ -35,6 +39,7 @@ var HomeController = {
   },
   CreateUser: function(req, res) {
     req.body.Gender = req.body.Gender[0] === "Other" ? req.body.Gender[1] : req.body.Gender[0]
+    req.session.password = req.body.password;
     req.body.password = bcrypt.hashSync(req.body.password, 10);
     req.body.Status = true;
     var user = new User(req.body);
@@ -43,6 +48,9 @@ var HomeController = {
       req.session.test = 'tomato';
       req.session.username = req.body.username;
       req.session.name = req.body.name;
+      req.session.Gender = req.body.Gender;
+      req.session.Birthday = req.body.Birthday;
+      req.session.About = req.body.About;
       res.status(201).redirect('/posts');
     });
   },
