@@ -13,9 +13,7 @@
 <h1 class="title">{{title}}</h1>
 
 
-  <form action="/login" method="get">
-    <button type="submit" id="logout">Log out</button>
-  </form>
+
   <form action="/posts">
     <button type="submit" id="home">Home</button>
   </form>
@@ -67,6 +65,10 @@
   {{#each posts}}
   <li><b>{{this.message}}</b></li>
   <li><small><i>{{this.date}}</i></small></li>
+  <form id="delete-post" action="/profile/delete" method="post">
+    <input type="hidden" name="delpost" value="{{this._id}}">
+    <button type="submit" value="donut">Delete post</button>
+  </form>
   <br>
   {{/each}}
 </ul>

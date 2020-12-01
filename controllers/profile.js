@@ -42,9 +42,21 @@ var ProfileController = {
       res.status(201).redirect('/profile');
 
   },
+  Delete: function(req, res) {
+
+
+      Post.deleteOne({_id: req.body.delpost}, function(err, result) {
+        if (err) {
+          res.send(err);
+        } else {
+          res.status(201).redirect('/profile');
+        }
+      });
+  //}));
+  },
   Create: function(req, res) {
 
-
+    req.body.likes = 0;
     req.body.owner = req.session.name;
     req.body.date = new Date();
 

@@ -12,9 +12,20 @@ var PostsController = {
       res.render('posts/index', { posts: posts, test: req.session.test,  title: 'IceBook' });
     });
   },
+  Like: function(req, res) {
+    Post.findOne({_id: req.body.likepost}).exec().then(data => {
+      Post.updateOne({_id: req.body.likepost}, {
+        likes: data.likes += 1,
+      }, function(err, affected, res){
+        console.log(res);
+      })
+    })
+
+    res.status(201).redirect('/posts')
+  },
   Create: function(req, res) {
 
-
+    req.body.likes = 0;
     req.body.owner = req.session.name;
     req.body.date = new Date();
 
