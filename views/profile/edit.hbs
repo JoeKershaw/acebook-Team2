@@ -3,10 +3,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 
-<p>Sign Up</p>
+<div>
+  <form action="/login">
+    <button type="submit" id="logout">Log Out</button>
+  </form>
+</div>
+
+<p>Edit Profile</p>
 <h1 class="title">{{title}}</h1>
 
-<h1>❄️🥶❄️🥶❄️🥶❄️</h1>
+<div>
+  <form action="/posts">
+    <button type="submit" id="home">Home</button>
+  </form>
+</div>
+
+<div>
+<form action="/profile">
+  <button type="submit" id="back">Back</button>
+</form>
+</div>
 
 <script type="text/javascript">
   function CheckGender(val) {
@@ -18,11 +34,9 @@
   }
 </script>
 
-<form id="sign-up-form" action="/1" method="post">
-  <input type="text" name="username" placeholder="Username" maxlength="20">
+<form id="sign-up-form" action="/profile/edit" method="post">
+  <input type="text" name="name" placeholder="Name">
   <input type="password" name="password" placeholder="Password">
-  <br><br>
-  <input type="text" name="name" placeholder="Name: first, last" maxlength="20">
   <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);'>
     <option value="Female">Female</option>
     <option value="Male">Male</option>
@@ -32,13 +46,7 @@
   <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
   <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
   <br>
-  <textarea name="About" placeholder="About me" rows="5" cols="57"></textarea>
+  <textarea name="About" placeholder="About me" rows="5" cols="80"></textarea>
   <br>
   <button type="submit" value="Submit">Submit</button>
 </form>
-
-<div>
-  <form action="/">
-    <button type="submit" id="back">Cancel</button>
-  </form>
-</div>
