@@ -1,8 +1,7 @@
 body {
-  text-align: centre;
+  text-align: center;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  height: 750px;
+  font-family: 'Montserrat', sans-serif; font-size: 18px;
  }
 
 .fixed {
@@ -11,4 +10,36 @@ body {
   right: 0;
   width: 200px;
   background-color: blue;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  background-color: #E01691;
+  /* background-color: #B6E022; */
+  color: white;
+  padding: 6px 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  /* montse */
+  /* border: 1.5px solid #242424; */
+  border-radius: 25px;
+
+}
+
+select {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+input {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+textarea {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
 }

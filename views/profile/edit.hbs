@@ -1,3 +1,15 @@
+<head>
+  <link rel='stylesheet' href='/stylesheets/profile.css' />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+
+<div>
+  <form action="/login">
+    <button type="submit" id="logout">Log Out</button>
+  </form>
+</div>
+
+<p>Edit Profile</p>
 <h1 class="title">{{title}}</h1>
 
 <div>
@@ -33,6 +45,8 @@
   </select>
   <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
   <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
-  <textarea name="About" placeholder="About me" rows="8" cols="80"></textarea>
-  <input type="submit" value="Submit">
+  <br>
+  <textarea name="About" placeholder="About me" rows="5" cols="80"></textarea>
+  <br>
+  <button type="submit" value="Submit">Submit</button>
 </form>
