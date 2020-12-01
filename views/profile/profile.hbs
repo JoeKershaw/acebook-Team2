@@ -12,24 +12,18 @@
 <p>Your Profile</p>
 <h1 class="title">{{title}}</h1>
 
-
-  <form action="/login" method="get">
-    <button type="submit" id="logout">Log out</button>
-  </form>
   <form action="/posts">
     <button type="submit" id="home">Home</button>
   </form>
 
   <form action="/profile/edit">
-    <button type="submit" id="edit">Edit</button>
+    <button type="submit" id="edit">Edit Profile</button>
   </form>
-
-
 
 <body>
   <ul class="profile" text-align="center">
     <section>
-      {{user.name}}
+      {{user.title}} {{user.firstname}} {{user.lastname}}
     </section>
     <section>
       {{user.Gender}}
@@ -47,11 +41,6 @@
   </div>
 
   </body>
-  <div>
-    <form action="/profile/edit">
-      <button type="submit" id="edit">Edit Profile</button>
-    </form>
-  </div>
 
 <h2><b>Your posts</b></h2>
 <form id="new-post-form" action="/profile" method="post">
