@@ -3,35 +3,33 @@ const bcrypt = require('bcrypt');
 
 var HomeController = {
   Index: function(req, res) {
-    res.render('home/index', { title: 'Acebook', test: req.session.test });
+    // res.setHeader({})
+    res.render('home/index', { title: 'IceBook'});
   },
   Signup: function(req, res) {
-    res.render('home/signup', { title: 'Acebook' });
+    res.render('home/signup', { title: 'IceBook' });
   },
   Login: function(req, res) {
-    res.render('home/login', { title: 'Acebook' });
+    res.render('home/login', { title: 'IceBook' });
   },
   Logout: function(req, res) {
-    res.render('home/login', {title: 'Acebook' });
-    //re.body.Status = false; find user in database and
-    //change their status to false
+    req.session.destroy
+    res.render('home/login', {title: 'IceBook' });
   },
   LoginUser: function(req,res) {
-    User.findOne({ name: req.body.username }).exec().then(data => {
+    User.findOne({ username: req.body.
+      username}).exec().then(data => {
       if(!data) {
           return res.status(400).send({ message: "Your username or password is incorrect" });
       }
       if(!bcrypt.compareSync(req.body.password, data.password)) {
           return res.status(400).send({ message: "Your username or password is incorrect" });
       }
-
       req.session.test = 'tomato';
+      req.session.username = req.body.username;
+      req.session.name = data.name;
 
-      User.updateOne({ name: req.body.username}, {
-        Status: true
-      }, function(err, affected, resp) {
-        console.log(resp);
-      })
+
       res.status(201).redirect('/profile');
      });
   },
@@ -42,7 +40,9 @@ var HomeController = {
     var user = new User(req.body);
     user.save(function(err) {
       if (err) { throw err; }
-
+      req.session.test = 'tomato';
+      req.session.username = req.body.username;
+      req.session.name = req.body.name;
       res.status(201).redirect('/posts');
     });
   },
