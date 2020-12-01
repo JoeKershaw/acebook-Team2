@@ -9,7 +9,7 @@ var PostsController = {
     Post.find({}, null, {sort: {date: -1}},function(err, posts) {
       if (err) { throw err; }
 
-      res.render('posts/index', { posts: posts, test: req.session.test });
+      res.render('posts/index', { posts: posts, test: req.session.test,  title: 'IceBook' });
     });
   },
   Create: function(req, res) {

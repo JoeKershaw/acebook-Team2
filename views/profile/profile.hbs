@@ -12,11 +12,19 @@
 <p>Your Profile</p>
 <h1 class="title">{{title}}</h1>
 
-<div>
+
+  <form action="/login" method="get">
+    <button type="submit" id="logout">Log out</button>
+  </form>
   <form action="/posts">
     <button type="submit" id="home">Home</button>
   </form>
-</div>
+
+  <form action="/profile/edit">
+    <button type="submit" id="edit">Edit</button>
+  </form>
+
+
 
 <body>
   <ul class="profile" text-align="center">
@@ -34,6 +42,10 @@
     </section>
   </ul>
 
+
+  <div class="fixed">
+  </div>
+
   </body>
   <div>
     <form action="/profile/edit">
@@ -47,7 +59,9 @@
   <input id="message" type="text" name="message" value="">
   <button type="submit" value="Share">Share</button>
 </form>
+
 <br>
+
 <div class="tlposts" style="height: 500px; overflow:auto;">
 <ul class="posts">
   {{#each posts}}

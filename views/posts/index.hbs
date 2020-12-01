@@ -12,17 +12,16 @@
 <p>Timeline</p>
 <h1> IceBook </h1>
 
-    <div>
+    <h1 class="title">{{title}}</h1>
+
+    <body>
       <form action="/posts">
-        <button type="submit" id="home">Home</button>
+        <button type="submit" class="button-group" id="home">Home</button>
       </form>
-    </div>
-    <div>
+
       <form action="/profile">
         <button type="submit" id="profile">My Profile</button>
       </form>
-    </div>
-
 
     <!-- <h1>Timeline</h1> -->
 
@@ -44,3 +43,4 @@
         {{/each}}
       </ul>
     </div>
+  </body>
