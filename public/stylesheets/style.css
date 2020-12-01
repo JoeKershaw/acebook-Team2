@@ -1,21 +1,16 @@
 body {
   text-align: center;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-
-
+  font-family: 'Montserrat', sans-serif; font-size: 18px;
    background-image: linear-gradient(to bottom right, #7CACF7, #6BB1D6, #83E4ED, #6BB1D6, #7CACF7);
    height: 750px;
+
 }
 
-
-/* #logout {
-  width: 80px;
-  height: 20px;
+#logout {
   display: flex;
   text-align: center;
-} */
+}
 
 li {
   list-style: none;
@@ -23,7 +18,7 @@ li {
 
 .tlposts {
   border-width: 20px;
-  border-color: aqua;
+  border-color: #0F3896;
   border-style: solid;
 
 /* #indexbg {
@@ -44,4 +39,20 @@ li {
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+}
+
+button {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  background-color: #4747DE;
+  color: white;
+  padding: 6px 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  /* border: 1.5px solid #FFFFF; */
+  /* border: 2px solid #242424; */
+  border-radius: 25px;
+
 }

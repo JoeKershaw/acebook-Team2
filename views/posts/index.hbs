@@ -1,4 +1,16 @@
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+<head>
+  <link rel='stylesheet' href='/stylesheets/profile.css' />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+
+<div>
+  <form action="/login">
+    <button type="submit" id="logout">Log Out</button>
+  </form>
+</div>
+
+<p>Timeline</p>
+<h1> IceBook </h1>
 
     <h1 class="title">{{title}}</h1>
 
@@ -8,28 +20,25 @@
       </form>
 
       <form action="/profile">
-        <button type="submit" id="profile">Profile</button>
+        <button type="submit" id="profile">My Profile</button>
       </form>
 
-      <form action="/login">
-        <button type="submit" id="logout">Log out</button>
-      </form>
-    </div>
-
-    <h1>Timeline</h1>
+    <!-- <h1>Timeline</h1> -->
 
     <form id="new-post-form" action="/posts" method="post">
-      <label for="message">Message: </label>
+      <label for="message">New post: </label>
       <input id="message" type="text" name="message" value="">
-      <input type="submit" value="Share post">
+      <button type="submit" value="Share post">Share</button>
     </form>
+
+    <br>
 
     <div class="tlposts" style="height: 500px; overflow:auto;" >
       <ul class="posts">
         {{#each posts}}
-        <li>{{this.owner}} </li>
+        <li><b>{{this.owner}}</b> posted:</li>
         <li>{{this.message}} </li>
-        <li>{{this.date}} </li>
+        <li><small>on <i>{{this.date}} </i></small></li>
         <br>
         {{/each}}
       </ul>
