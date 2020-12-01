@@ -7,6 +7,7 @@ body {
    background-image: linear-gradient(to bottom right, #7CACF7, #6BB1D6, #83E4ED, #6BB1D6, #7CACF7);
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
 }
 
 a {
