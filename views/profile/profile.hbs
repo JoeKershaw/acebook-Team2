@@ -1,5 +1,15 @@
-<link rel='stylesheet' href='/stylesheets/profile.css' />
+<head>
+  <link rel='stylesheet' href='/stylesheets/profile.css' />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
 
+<div>
+  <form action="/login">
+    <button type="submit" id="logout">Log Out</button>
+  </form>
+</div>
+
+<p>Your Profile</p>
 <h1 class="title">{{title}}</h1>
 
 
@@ -16,41 +26,47 @@
 
 
 
-  <ul class="profile">
-
+<body>
+  <ul class="profile" text-align="center">
     <section>
       {{user.name}}
     </section>
-
     <section>
       {{user.Gender}}
     </section>
-
+    <section>
+      {{user.Birthday}}
+    </section>
     <section>
       {{user.About}}
     </section>
   </ul>
 
 
-
   <div class="fixed">
-    {{user.Birthday}}
   </div>
 
+  </body>
+  <div>
+    <form action="/profile/edit">
+      <button type="submit" id="edit">Edit Profile</button>
+    </form>
+  </div>
 
-
-<h1>Posts</h1>
-
+<h2><b>Your posts</b></h2>
 <form id="new-post-form" action="/profile" method="post">
-  <label for="message">Message: </label>
+  <label for="message">New post: </label>
   <input id="message" type="text" name="message" value="">
-  <input type="submit" value="Share post">
+  <button type="submit" value="Share">Share</button>
 </form>
+
+<br>
+
 <div class="tlposts" style="height: 500px; overflow:auto;">
 <ul class="posts">
   {{#each posts}}
-  <li>{{this.message}}</li>
-  <li>{{this.date}}</li>
+  <li><b>{{this.message}}</b></li>
+  <li><small><i>{{this.date}}</i></small></li>
   <br>
   {{/each}}
 </ul>
