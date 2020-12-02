@@ -42,7 +42,8 @@
         <br>
         <form id="like-post" action="/posts/like" method="post">
           <input type="hidden" name="likepost" value="{{this._id}}">
-          <button type="submit">👍{{this.likes}}</button>
+          <button type="submit" title="{{this.liked_by}}">👍{{this.likes}}</button>
+
         </form>
         {{/each}}
       </ul>
