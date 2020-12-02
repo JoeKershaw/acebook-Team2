@@ -28,21 +28,25 @@
 </form>
 </div>
 
+<br>
+
 <script type="text/javascript">
   function CheckGender(val) {
     var element = document.getElementById('Gender')
     if (val=='Other')
-      element.style.display='block'
+      element.style.display="inline-block"
     else
       element.style.display='none'
   }
 </script>
 <div class="align">
 <form id="sign-up-form" action="/profile/edit" method="post">
+  <br>
   <input type="text" name="title" placeholder="Title">
   <input type="text" name="firstname" placeholder="First name">
   <input type="text" name="lastname" placeholder="Last name">
   <input type="password" name="password" placeholder="Password">
+  <br>
   <br>
   <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);'>
     <option value="" disabled selected>Gender (select)</option>
@@ -53,9 +57,12 @@
   </select>
   <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
   <br>
+  <br>
   <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
   <br>
+  <br>
   <textarea name="About" placeholder="About me" rows="5" cols="80"></textarea>
+  <br>
   <br>
   <button type="submit" value="Submit">Submit</button>
 </form>
