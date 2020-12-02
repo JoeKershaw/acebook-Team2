@@ -15,13 +15,13 @@ var PostsController = {
   Like: function(req, res) {
      Post.findOne({_id: req.body.likepost}).exec().then(data => {
        let p = new Promise((resolve, reject) => {
-         resolve(Post.updateOne({_id: req.body.likepost}, {$addToSet: {liked_by: [req.session.name]}}, {
+         resolve(Post.updateOne({_id: req.body.likepost}, {$addToSet: {liked_by: [req.session.firstname]}}, {
       }, function(err, affected, res){
         console.log(res);
       }))
         reject('Failed');
     });
-    
+
     let q = new Promise((resolve, reject) => {
       resolve(Post.updateOne({_id: req.body.likepost}, {
         likes: data.likes += 1,
@@ -47,7 +47,8 @@ var PostsController = {
   Create: function(req, res) {
 
     req.body.likes = 0;
-    req.body.owner = req.session.name;
+    req.body.owner = req.session.username;
+    req.body.ownername = req.session.firstname;
     req.body.date = new Date();
 
       var post = new Post(req.body);

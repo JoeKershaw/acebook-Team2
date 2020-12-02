@@ -27,11 +27,10 @@ var HomeController = {
       }
       req.session.test = 'tomato';
       req.session.username = req.body.username;
-      req.session.name = data.name;
 
-      //req.session.title = data.title;
-      //req.session.firstname = data.firstname;
-      //req.session.lastname = data.lastname;
+      req.session.title = data.title;
+      req.session.firstname = data.firstname;
+      req.session.lastname = data.lastname;
       req.session.password = req.body.password;
       req.session.Gender = data.Gender;
       req.session.Birthday = data.Birthday;
@@ -55,7 +54,6 @@ var HomeController = {
       req.session.firstname = req.body.firstname;
       req.session.lastname = req.body.lastname;
 
-      req.session.name = req.body.name;
       req.session.Gender = req.body.Gender;
       req.session.Birthday = req.body.Birthday;
       req.session.About = req.body.About;

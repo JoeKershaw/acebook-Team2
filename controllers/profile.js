@@ -8,9 +8,9 @@ var ProfileController = {
       res.status(201).redirect('/')
     };
     User.findOne({ username: req.session.username}).exec().then(data => {
-      Post.find({owner: data.name}, null, {sort: {date: -1}}, function(err, posts) {
+      Post.find({owner: data.username}, null, {sort: {date: -1}}, function(err, posts) {
         if (err) { throw err; }
-
+        console.log(data)
       res.render('profile/profile', { user: data, title: "IceBook", posts: posts });
     });
     })
@@ -19,9 +19,8 @@ var ProfileController = {
       res.render('profile/edit', {title: 'IceBook' });
   },
   EditUser: function(req, res) {
-    console.log(req.session.Gender)
-    console.log(req.body.Gender === "")
-    req.body.name = req.body.name === "" ? req.session.name : req.body.name
+    req.body.firstname = req.body.firstname === "" ? req.session.firstname : req.body.firstname
+    req.body.secondname = req.body.secondname === "" ? req.session.secondname : req.body.secondname
     req.body.password = req.body.password === "" ? req.session.password : req.body.password
     req.session.password = req.body.password;
     req.body.password = bcrypt.hashSync(req.body.password, 10);
@@ -35,7 +34,8 @@ var ProfileController = {
     req.body.About = req.body.About === "" ? req.session.About : req.body.About;
 
     User.updateOne({ username: req.session.username}, {
-      name: req.body.name,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       password: req.body.password,
       Gender: req.body.Gender,
       Birthday: req.body.Birthday,
@@ -44,13 +44,14 @@ var ProfileController = {
       console.log(res);
     })
 
-    Post.updateMany({ owner: req.session.name}, {
-      owner: req.body.name,
-    }, function(err, affected, resp) {
+    Post.updateMany({ owner: req.session.username}, { 
+      ownername: req.body.firstname, 
+    }, function(err, affected, resp) { 
       console.log(resp);
-    })
+     })
 
-      req.session.name = req.body.name
+      req.session.firstname = req.body.firstname;
+      req.session.secondname = req.body.secondname;
       req.session.Gender = req.body.Gender;
       req.session.Birthday = req.body.Birthday;
       req.session.About = req.body.About;
@@ -72,7 +73,7 @@ var ProfileController = {
   Create: function(req, res) {
 
     req.body.likes = 0;
-    req.body.owner = req.session.name;
+    req.body.owner = req.session.username;
     req.body.date = new Date();
 
       var post = new Post(req.body);
