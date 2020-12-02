@@ -1,27 +1,32 @@
 <head>
   <link rel='stylesheet' href='/stylesheets/profile.css' />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+  <iframe width="1px" height="1px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273203138&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </head>
 
 <div>
-  <form action="/login">
+  <form action="/">
     <button type="submit" id="logout">Log Out</button>
   </form>
 </div>
 
-<p>Timeline</p>
-<h1> IceBook </h1>
+
 
     <h1 class="title">{{title}}</h1>
 
+    <p>Timeline</p>
+
     <body>
+      <div class="alignbutton">
       <form action="/posts">
         <button type="submit" class="button-group" id="home">Home</button>
       </form>
-
+    </div>
+    <div class="alignbutton">
       <form action="/profile">
         <button type="submit" id="profile">My Profile</button>
       </form>
+    </div>
 
     <!-- <h1>Timeline</h1> -->
 
@@ -40,6 +45,11 @@
         <li>{{this.message}} </li>
         <li><small>on <i>{{this.date}} </i></small></li>
         <br>
+        <form id="like-post" action="/posts/like" method="post">
+          <input type="hidden" name="likepost" value="{{this._id}}">
+          <button type="submit" title="{{this.liked_by}}">👍{{this.likes}}</button>
+
+        </form>
         {{/each}}
       </ul>
     </div>
