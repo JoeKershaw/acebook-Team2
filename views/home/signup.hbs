@@ -27,18 +27,24 @@
 </script>
 
 <form id="sign-up-form" action="/1" method="post">
-  <input type="text" name="username" placeholder="Username" maxlength="20">
-  <input type="password" name="password" placeholder="Password">
+  <input type="text" name="username" placeholder="Username" maxlength="20" required>
+  <input type="password" name="password" placeholder="Password" required>
   <br><br>
-  <input type="text" name="name" placeholder="Name: first, last" maxlength="20">
-  <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);'>
+  <input type="text" name="title" placeholder="Title" required>
+  <input type="text" name="firstname" placeholder="First name" required>
+  <input type="text" name="lastname" placeholder="Last name" required>
+  <!-- <input type="text" name="name" placeholder="Name: first, last" maxlength="20"> -->
+  <br>
+  <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);' required>
+    <option value="" disabled selected>Gender (select)</option>
     <option value="Female">Female</option>
     <option value="Male">Male</option>
     <option value="Other">Other</option>
     <option value="NA">I'd rather not say</option>
   </select>
   <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
-  <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
+  <br>
+  <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)" required>
   <br>
   <textarea name="About" placeholder="About me" rows="5" cols="57"></textarea>
   <br>

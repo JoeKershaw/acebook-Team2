@@ -12,6 +12,7 @@
 </div>
 
 
+
 <h1 class="title">{{title}}</h1>
 
 <p>Your Profile</p>
@@ -23,17 +24,17 @@
 
 <div class="alignbutton">
   <form action="/profile/edit">
-    <button type="submit">Edit Profile</button>
+
+    <button type="submit" id="edit">Edit Profile</button>
+
   </form>
 </div>
-
-
 
 <body>
 <div class="tlposts", class="text">
 
     <section>
-      {{user.name}}
+      {{user.title}} {{user.firstname}} {{user.lastname}}
     </section>
     <br>
     <section>
@@ -55,8 +56,6 @@
   </div> -->
 
   </body>
-
-
 
 
 <h2><b>Your posts</b></h2>
