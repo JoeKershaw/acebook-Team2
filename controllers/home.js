@@ -28,7 +28,9 @@ var HomeController = {
       req.session.test = 'tomato';
       req.session.username = req.body.username;
       req.session.name = data.name;
-
+      //req.session.title = data.title;
+      //req.session.firstname = data.firstname;
+      //req.session.lastname = data.lastname;
 
       res.status(201).redirect('/profile');
      });
@@ -42,7 +44,9 @@ var HomeController = {
       if (err) { throw err; }
       req.session.test = 'tomato';
       req.session.username = req.body.username;
-      req.session.name = req.body.name;
+      req.session.title = req.body.title;
+      req.session.firstname = req.body.firstname;
+      req.session.lastname = req.body.lastname;
       res.status(201).redirect('/posts');
     });
   },
