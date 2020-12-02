@@ -1,55 +1,64 @@
 <head>
   <link rel='stylesheet' href='/stylesheets/profile.css' />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+  <iframe width="1px" height="1px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/73200747&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </head>
 
+
 <div>
-  <form action="/login">
+  <form action="/">
     <button type="submit" id="logout">Log Out</button>
   </form>
 </div>
 
-<p>Your Profile</p>
+
+
+
 <h1 class="title">{{title}}</h1>
 
-
+<p>Your Profile</p>
+  <div class="alignbutton">
 
   <form action="/posts">
-    <button type="submit" id="home">Home</button>
+    <button type="submit" id="alignbutton">Home</button>
   </form>
+</div>
 
+<div class="alignbutton">
   <form action="/profile/edit">
-    <button type="submit" id="edit">Edit</button>
+
+    <button type="submit" id="edit">Edit Profile</button>
+
   </form>
-
-
+</div>
 
 <body>
-  <ul class="profile" text-align="center">
+<div class="tlposts", class="text">
+
     <section>
-      {{user.name}}
+      {{user.title}} {{user.firstname}} {{user.lastname}}
     </section>
+    <br>
     <section>
       {{user.Gender}}
     </section>
+    <br>
     <section>
       {{user.Birthday}}
     </section>
+    <br>
     <section>
       {{user.About}}
     </section>
-  </ul>
+
+</div>
 
 
-  <div class="fixed">
-  </div>
+  <!-- <div class="fixed">
+  </div> -->
 
   </body>
-  <div>
-    <form action="/profile/edit">
-      <button type="submit" id="edit">Edit Profile</button>
-    </form>
-  </div>
+
 
 <h2><b>Your posts</b></h2>
 <form id="new-post-form" action="/profile" method="post">
@@ -61,7 +70,7 @@
 <br>
 
 <div class="tlposts" style="height: 500px; overflow:auto;">
-<ul class="posts">
+
   {{#each posts}}
   <li><b>{{this.message}}</b></li>
   <li><small><i>{{this.date}}</i></small></li>
@@ -71,5 +80,5 @@
   </form>
   <br>
   {{/each}}
-</ul>
+
 </div>

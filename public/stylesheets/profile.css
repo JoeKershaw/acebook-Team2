@@ -1,5 +1,6 @@
 body {
-
+  text-align: center;
+  vertical-align: middle;
   padding: 50px;
   font-family: 'Montserrat', sans-serif; font-size: 18px;
  }
@@ -12,6 +13,10 @@ body {
   background-color: blue;
 }
 
+.text{
+  text-align: center;
+}
+
 button {
   font-family: 'Montserrat', sans-serif; font-size: 20px;
   background-color: #E01691;
@@ -20,13 +25,27 @@ button {
   padding: 6px 20px;
   text-align: center;
   display: inline-block;
-  margin: 4px 2px;
+
   transition-duration: 0.5s;
   cursor: pointer;
   /* montse */
   /* border: 1.5px solid #242424; */
   border-radius: 25px;
 
+}
+
+.align {
+  display: table-row;
+  margin: 0.5px;
+
+  text-align: center;
+}
+
+.alignbutton {
+  display: inline-block;
+  margin: 0.5px;
+
+  text-align: center;
 }
 
 select {
