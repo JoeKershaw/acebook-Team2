@@ -39,15 +39,20 @@
 </script>
 <div class="align">
 <form id="sign-up-form" action="/profile/edit" method="post">
-  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="title" placeholder="Title">
+  <input type="text" name="firstname" placeholder="First name">
+  <input type="text" name="lastname" placeholder="Last name">
   <input type="password" name="password" placeholder="Password">
+  <br>
   <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);'>
+    <option value="" disabled selected>Gender (select)</option>
     <option value="Female">Female</option>
     <option value="Male">Male</option>
     <option value="Other">Other</option>
     <option value="NA">I'd rather not say</option>
   </select>
   <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
+  <br>
   <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
   <br>
   <textarea name="About" placeholder="About me" rows="5" cols="80"></textarea>
