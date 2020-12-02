@@ -45,6 +45,11 @@
         <li>{{this.message}} </li>
         <li><small>on <i>{{this.date}} </i></small></li>
         <br>
+        <form id="like-post" action="/posts/like" method="post">
+          <input type="hidden" name="likepost" value="{{this._id}}">
+          <button type="submit" title="{{this.liked_by}}">👍{{this.likes}}</button>
+
+        </form>
         {{/each}}
       </ul>
     </div>

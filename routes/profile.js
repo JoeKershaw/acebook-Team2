@@ -7,5 +7,7 @@ router.get('/', ProfileController.Index);
 router.get('/edit', ProfileController.Editor)
 router.post('/edit', ProfileController.EditUser)
 router.post('/', ProfileController.Create);
+router.post('/delete', ProfileController.Delete);
+
 
 module.exports = router;

@@ -13,10 +13,12 @@
 
 
 
+
 <h1 class="title">{{title}}</h1>
 
 <p>Your Profile</p>
   <div class="alignbutton">
+
   <form action="/posts">
     <button type="submit" id="alignbutton">Home</button>
   </form>
@@ -72,6 +74,10 @@
   {{#each posts}}
   <li><b>{{this.message}}</b></li>
   <li><small><i>{{this.date}}</i></small></li>
+  <form id="delete-post" action="/profile/delete" method="post">
+    <input type="hidden" name="delpost" value="{{this._id}}">
+    <button type="submit" value="donut">Delete post</button>
+  </form>
   <br>
   {{/each}}
 
