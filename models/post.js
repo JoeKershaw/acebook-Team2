@@ -6,7 +6,6 @@ var PostSchema = new mongoose.Schema({
   date: Date,
   likes: Number,
   liked_by: Array,
-  image: Buffer,
 });
 
 var Post = mongoose.model('Post', PostSchema);

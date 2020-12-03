@@ -4,9 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var multer = require('multer');
+var fs = require('fs');
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
 var profileRouter = require('./routes/profile');
+
 
 var app = express();
 

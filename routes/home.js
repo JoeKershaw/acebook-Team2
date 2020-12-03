@@ -9,6 +9,7 @@ router.post('/1', HomeController.CreateUser);
 router.get('/login', HomeController.Login);
 router.post('/2', HomeController.LoginUser);
 router.get('/logout', HomeController.Logout);
+//router.post('/pic', HomeController.UploadPic);
 
 
 module.exports = router;

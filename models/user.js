@@ -9,6 +9,12 @@ var UserSchema = new mongoose.Schema({
   Gender: String,
   Birthday: String,
   About: String,
+  //imageURL: String,
+  image:
+  {
+    data: Buffer,
+    contentType: String
+  }
 });
 
 var User = mongoose.model('User', UserSchema);
