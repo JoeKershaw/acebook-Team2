@@ -72,6 +72,7 @@ var ProfileController = {
 
     req.body.likes = 0;
     req.body.owner = req.session.username;
+    req.body.ownername = req.session.firstname;
     req.body.date = new Date();
 
       var post = new Post(req.body);
