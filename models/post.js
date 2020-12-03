@@ -7,6 +7,7 @@ var PostSchema = new mongoose.Schema({
   date: Date,
   likes: Number,
   liked_by: Array,
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}],
   image: Buffer,
 });
 

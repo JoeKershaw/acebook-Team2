@@ -10,7 +10,6 @@ var ProfileController = {
     User.findOne({ username: req.session.username}).exec().then(data => {
       Post.find({owner: data.username}, null, {sort: {date: -1}}, function(err, posts) {
         if (err) { throw err; }
-        console.log(data)
       res.render('profile/profile', { user: data, title: "IceBook", posts: posts });
     });
     })
@@ -68,7 +67,6 @@ var ProfileController = {
           res.status(201).redirect('/profile');
         }
       });
-  //}));
   },
   Create: function(req, res) {
 
