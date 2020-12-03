@@ -7,6 +7,7 @@ var session = require('express-session');
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
 var profileRouter = require('./routes/profile');
+var flash        = require('req-flash');
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret: 'sbcibcidscid',resave:false,saveUnitialized:false}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 
 
 // route setup
