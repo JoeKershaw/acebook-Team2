@@ -75,12 +75,19 @@
 <br>
 
 <div class="tlposts" style="height: 500px; overflow:auto;">
-<br>
   {{#each posts}}
-  <li><b>{{this.message}}</b></li>
-  <li><small><i>{{this.date}}</i></small></li>
+  <div class="postbox" style="overflow-wrap: break-word;">
+  <b>{{this.message}}</b>
   <br>
   <br>
+  <small><i>{{this.date}}</i></small>
+  <br>
+  <br>
+  <form id="delete-post" action="/profile/delete" method="post">
+   <input type="hidden" name="delpost" value="{{this._id}}">
+   <button type="submit" value="donut">Delete post</button>
+ </form>
+</div>
   {{/each}}
 
 </div>
