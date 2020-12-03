@@ -41,14 +41,21 @@
     <div class="tlposts" style="height: 500px; overflow:auto;" >
       <ul class="posts">
         {{#each posts}}
-        <li><b>{{this.owner}}</b> posted:</li>
+        <li><b>{{this.ownername}}</b> posted:</li>
         <li>{{this.message}} </li>
         <li><small>on <i>{{this.date}} </i></small></li>
+        {{#each this.comments}}
+        <li>{{this.owner}} commented: {{this.message}}</li>
+        <li><small> <i>{{this.date}} </i></small></li>
+        {{/each}}
         <br>
         <form id="like-post" action="/posts/like" method="post">
-          <input type="hidden" name="likepost" value="{{this._id}}">
+          <input type="hidden" name="post_id" value="{{this._id}}">
           <button type="submit" title="{{this.liked_by}}">👍{{this.likes}}</button>
-
+        </form>
+        <form id="comment-post" action="/posts/comment" method="post">
+          <input type="hidden" name="post_id" value="{{this._id}}">
+          <input type="text" name="comment"> <button type="submit" value="comment">Comment</button>
         </form>
         {{/each}}
       </ul>
