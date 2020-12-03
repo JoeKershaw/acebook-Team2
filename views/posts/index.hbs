@@ -32,10 +32,10 @@
 
     <!-- <h1>Timeline</h1> -->
     <div class="fixed">
-      <form id="new-post-form" action="/profile" method="post">
+      <form id="new-post-form" action="/posts" method="post">
         <label for="message">New post: </label>
         <input id="message" type="text" name="message" value="">
-        <button type="submit" value="Share">Share</button>
+        <button type="submit" value="Share post">Share</button>
       </form>
     </div>
 
@@ -60,7 +60,7 @@
         <br>
         <form id="like-post" action="/posts/like" method="post">
           <input type="hidden" name="post_id" value="{{this._id}}">
-          <button type="submit" title="{{this.liked_by}}">👍{{this.likes}}</button>
+          <button type="submit" title="{{this.liked_by}}">🧊{{this.likes}}</button>
         </form>
         <form id="comment-post" action="/posts/comment" method="post">
           <input type="hidden" name="post_id" value="{{this._id}}">
