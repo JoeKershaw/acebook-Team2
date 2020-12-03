@@ -10,7 +10,8 @@ var HomeController = {
     res.render('home/signup', { title: 'IceBook' });
   },
   Login: function(req, res) {
-    res.render('home/login', { title: 'IceBook' });
+    console.log(req.flash('failMessage'))
+    res.render('home/login', { title: 'IceBook', message: req.flash('failMessage') });
   },
   Logout: function(req, res) {
     req.session.destroy
@@ -20,10 +21,12 @@ var HomeController = {
     User.findOne({ username: req.body.
       username}).exec().then(data => {
       if(!data) {
-          return res.status(400).send({ message: "Your username or password is incorrect" });
+          req.flash('failMessage', 'Your username or password is incorrect');
+          return res.status(400).redirect('/login');
       }
       if(!bcrypt.compareSync(req.body.password, data.password)) {
-          return res.status(400).send({ message: "Your username or password is incorrect" });
+        req.flash('failMessage', 'Your username or password is incorrect');
+        return res.status(400).redirect('/login');
       }
       req.session.test = 'tomato';
       req.session.username = req.body.username;
