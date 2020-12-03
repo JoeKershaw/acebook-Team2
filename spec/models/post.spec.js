@@ -11,8 +11,10 @@ describe('Post model', function() {
   });
 
   it('has a message', function() {
-    var post = new Post({ message: 'some message' });
+    var post = new Post({ message: 'some message', owner: 'test', ownername: 'test' });
     expect(post.message).toEqual('some message');
+    expect(post.owner).toEqual('test');
+    expect(post.ownername).toEqual('test');
   });
 
   it('can list all posts', function(done) {
