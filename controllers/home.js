@@ -36,22 +36,19 @@ var HomeController = {
       res.status(201).redirect('/profile');
      });
   },
-  //UploadPic: function(req, res) {
-
-  //},
   CreateUser: function(req, res) {
     req.body.Gender = req.body.Gender[0] === "Other" ? req.body.Gender[1] : req.body.Gender[0]
     req.body.password = bcrypt.hashSync(req.body.password, 10);
     req.body.Status = true;
-    var imgPath = './public/images/mario.png';
     var user = new User(req.body);
-    //var avatar
-    user.image.data = fs.readFileSync(imgPath);
+    var imgPath = './public/images/mario.png'
+    user.image.data = fs.readFileSync(imgPath, "base64");
     user.image.contentType = 'image/png';
-    var buffer = new Buffer(user.image.data).toString('base64');;
-    //res.render('home/index', {image: buffer});
-    //console.log(buffer);
-    //console.log(string);
+    const buffer = Buffer.from(user.image.data, "base64");
+    var string = buffer.toString("base64");
+    console.log(user.image.data);
+    console.log(buffer);
+    fs.writeFileSync("new-path.png", buffer);
     user.save(function(err) {
       if (err) { throw err; }
       req.session.test = 'tomato';
@@ -60,22 +57,6 @@ var HomeController = {
       req.session.firstname = req.body.firstname;
       req.session.lastname = req.body.lastname;
       req.session.image = req.body.image;
-
-      //var dserver = express.createServer();
-      //dserver.get('/profile', function (err, doc) {
-        //User.findById(user, function (err, doc) {
-          //if(err) return next(err);
-          //res.contentType(doc.image.contentType);
-          //res.send(doc.img.date);
-        //});
-      //});
-
-      //function base64_encode(file) {
-        //var photo = fs.readFileSync(dp);
-        //return new Buffer(photo).toString('base64');
-
-      //}
-      //var base64str = base64_encode('mario.png')
 
       res.status(201).redirect('/posts');
     });

@@ -53,9 +53,20 @@ var ProfileController = {
         }
       });
   //}));
+/*  },
+  UploadImage: function(req, res) {
+    var user = new User(req.body);
+    user.save(function(err) {
+      if (err) {throw err; }
+
+      req.session.image = req.body.image;
+
+      res.status(201).redirect('/posts');
+    })*/
   },
   Create: function(req, res) {
 
+    //req.body.image = req.session.image
     req.body.likes = 0;
     req.body.owner = req.session.name;
     req.body.date = new Date();
