@@ -1,26 +1,57 @@
-<h1 class="title">{{title}}</h1>
+<head>
+  <link rel='stylesheet' href='/stylesheets/profile.css' />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+
+<div>
+<form action="/">
+  <button class="button button1" class="alignbutton" type="submit" id="logout">Back</button>
+</form>
+</div>
+
+<img src="../Logo/LOGO.png" alt="Icebook logo">
+
+<h1 class="title">❄️🥶Sign Up🥶❄️</h1>
+
 
 <script type="text/javascript">
   function CheckGender(val) {
     var element = document.getElementById('Gender')
     if (val=='Other')
-      element.style.display='block'
+      element.style.display="inline-block"
     else
       element.style.display='none'
   }
 </script>
 
+<div class="align"; padding="2px">
 <form id="sign-up-form" action="/1" method="post">
-  <input type="text" name="name" placeholder="Name: first, last" maxlength="20">
-  <input type="password" name="password" placeholder="Password">
-  <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);'>
+  <input type="text" name="username" placeholder="Username" maxlength="20" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <br><br>
+
+  <input type="text" name="title" placeholder="Title" required>
+  <input type="text" name="firstname" placeholder="First name" required>
+  <input type="text" name="lastname" placeholder="Last name" required>
+  <br>
+  <br>
+  <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);' required>
+
+    <option value="" disabled selected>Gender (select)</option>
     <option value="Female">Female</option>
     <option value="Male">Male</option>
     <option value="Other">Other</option>
     <option value="NA">I'd rather not say</option>
   </select>
   <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
-  <input type="text" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
-  <textarea name="About-me" placeholder="About me" rows="8" cols="80"></textarea>
-  <input type="submit" value="Submit">
+  <br>
+    <br>
+  <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)" required>
+  <br>
+  <br>
+  <textarea name="About" placeholder="About me" rows="2" cols="50"></textarea>
+  <br>
+  <br>
+  <button class="button button1" class="alignbutton" type="submit" value="Submit">Submit</button>
 </form>
+</div>

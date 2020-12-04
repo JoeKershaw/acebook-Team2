@@ -1,0 +1,71 @@
+<head>
+  <link rel='stylesheet' href='/stylesheets/profile.css' />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+  <iframe width="1px" height="1px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/328876556&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+</head>
+
+<div>
+  <form action="/">
+    <button class="button button1" class="alignbutton" type="submit" id="logout">Log Out</button>
+  </form>
+</div>
+
+<img src="../Logo/LOGO.png" alt="Icebook logo">
+
+
+
+<h1 class="title">❄️🥶Edit Profile🥶❄️</h1>
+
+
+
+<div class="alignbutton">
+  <form action="/posts">
+    <button class="button button1" class="alignbutton" type="submit" id="home">Home</button>
+  </form>
+</div>
+
+<div class="alignbutton">
+<form action="/profile">
+  <button class="button button1" class="alignbutton" type="submit" id="back">Back</button>
+</form>
+</div>
+
+<br>
+
+<script type="text/javascript">
+  function CheckGender(val) {
+    var element = document.getElementById('Gender')
+    if (val=='Other')
+      element.style.display="inline-block"
+    else
+      element.style.display='none'
+  }
+</script>
+<div class="align">
+<form id="sign-up-form" action="/profile/edit" method="post">
+  <br>
+  <input type="text" name="title" placeholder="Title">
+  <input type="text" name="firstname" placeholder="First name">
+  <input type="text" name="lastname" placeholder="Last name">
+  <input type="password" name="password" placeholder="Password">
+  <br>
+  <br>
+  <select class="User-gender" name="Gender" placeholder="Gender" onchange='CheckGender(this.value);'>
+    <option value="" disabled selected>Gender (select)</option>
+    <option value="Female">Female</option>
+    <option value="Male">Male</option>
+    <option value="Other">Other</option>
+    <option value="NA">I'd rather not say</option>
+  </select>
+  <input type="text" name="Gender" id="Gender" placeholder="Your gender identity" style='display:none;'/>
+  <br>
+  <br>
+  <input type="date" name="Birthday" placeholder="Birthday (dd/mm/yyyy)">
+  <br>
+  <br>
+  <textarea name="About" placeholder="About me" rows="2" cols="50"></textarea>
+  <br>
+  <br>
+  <button class="button button1" class="alignbutton" type="submit" value="Submit">Submit</button>
+</form>
+</div>

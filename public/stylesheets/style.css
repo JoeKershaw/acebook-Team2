@@ -1,8 +1,137 @@
 body {
+  text-align: center;
+  vertical-align: middle;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif; font-size: 18px;
+
+   background-image: linear-gradient(to bottom right, #7CACF7, #6BB1D6, #83E4ED, #83E4ED, #83E4ED, #6BB1D6, #7CACF7);
+   height: 1000px;
+
+
 }
 
-a {
-  color: #00B7FF;
+.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  background-color: blue;
+}
+
+.text{
+  text-align: center;
+
+}
+
+#logout {
+  display: flex;
+  text-align: center;
+}
+.align {
+  text-align: center;
+}
+
+.alignbutton {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+h1{
+  text-align: center;
+  color: white;
+/* outline: 5px dotted green; */
+  /* background: black; */
+
+  font-size: 50px
+}
+
+select {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+input {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+textarea {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+.tlposts {
+  border-width: 20px;
+  border-color: #0F3896;
+  border-style: solid;
+}
+
+.postbox {
+
+  outline: 10px solid #0F3896;
+}
+
+.postbox2 {
+
+  outline: 2px solid #0F3896;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+/* #indexbg {
+  height: 200px;
+  background-image: linear-gradient(to bottom right, #7CACF7, #6BB1D6, #83E4ED);
+} */
+
+.posts{
+  list-style: none
+}
+
+
+
+
+
+}
+
+.button {
+
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  font-family: 'Montserrat', sans-serif; font-size:24px;
+padding: 6px 20px;
+transition-duration: 0.5s;
+  background-color: blue;
+  color: cyan;
+  padding: 6px 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 25px;
+  cursor: pointer;
+  size: 10px
+
+}
+
+ .button1:hover {
+   background-color: cyan;
+   color: blue;
+   border: 5px solid blue;
 }

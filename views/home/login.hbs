@@ -1,7 +1,27 @@
-<h1 class="title">{{title}}</h1>
+<head>
+  <link rel='stylesheet' href='/stylesheets/profile.css' />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+
+<div>
+
+  <form action="/">
+    <button class="button button1" class="alignbutton" type="submit" id="logout">Back</button>
+  </form>
+</div>
+
+<img src="../Logo/LOGO.png" alt="Icebook logo">
+<h1 class="title">❄️🥶Log In🥶❄️</h1>
+
+<!--
+<h1>❄️🥶❄️🥶❄️🥶❄️</h1> -->
+
+  <div class="alert alert-danger"> {{message}} </div>
 
 <form id="log-in-form" action="/2" method="post">
-  <input type="text" name="username" placeholder="Username">
-  <input type="password" name="password" placeholder="Password">
-  <input type="submit" value="Submit">
+  <input type="text" name="username" placeholder="Username" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <br>
+  <br>
+  <button class="button button1" class="alignbutton" type="submit" value="Submit">Submit</button>
 </form>

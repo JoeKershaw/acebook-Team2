@@ -1,9 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose').model('User').schema;
 
-var ProfileSchema = new mongoose.Schema({
-  message: String,
-});
-
-var Profile = mongoose.model('Profile', ProfileSchema);
+var Profile = mongoose.model('User', UserSchema);
 
 module.exports = Profile;
