@@ -1,12 +1,12 @@
 <head>
   <link rel='stylesheet' href='/stylesheets/profile.css' />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
-  <!-- <iframe width="1px" height="1px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273203138&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> -->
+  <iframe width="1px" height="1px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/273203138&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </head>
 
 <div>
   <form action="/">
-    <button type="submit" id="logout">Log Out</button>
+    <button class="button button1" class="alignbutton" type="submit" id="logout">Log Out</button>
   </form>
 </div>
 
@@ -16,15 +16,14 @@
 
     <h1 class="title">❄️🥶Timeline🥶❄️</h1>
 
-    <body>
       <div class="alignbutton">
       <form action="/posts">
-        <button type="submit" class="button-group" id="home">Home</button>
+        <button class="button button1" class="alignbutton" type="submit" id="home">Home</button>
       </form>
     </div>
     <div class="alignbutton">
       <form action="/profile">
-        <button type="submit" id="profile">My Profile</button>
+        <button class="button button1" class="alignbutton" type="submit" id="profile">My Profile</button>
       </form>
     </div>
     <br>
@@ -35,38 +34,71 @@
       <form id="new-post-form" action="/posts" method="post">
         <label for="message">New post: </label>
         <input id="message" type="text" name="message" value="">
-        <button type="submit" value="Share post">Share</button>
+
+        <button class="button button1" class="alignbutton" type="submit" value="Share post">Share</button>
+
       </form>
     </div>
 
     <form id="new-post-form" action="/posts" method="post">
       <label for="message">New post: </label>
       <input id="message" type="text" name="message" value="">
-      <button type="submit" value="Share post">Share</button>
+      <button class="button button1" class="alignbutton" type="submit" value="Share post">Share</button>
     </form>
 
     <br>
 
     <div class="tlposts" style="height: 500px; overflow:auto;" >
-      <ul class="posts">
         {{#each posts}}
-        <li><b>{{this.ownername}}</b> posted:</li>
-        <li>{{this.message}} </li>
-        <li><small>on <i>{{this.date}} </i></small></li>
-        {{#each this.comments}}
-        <li>{{this.owner}} commented: {{this.message}}</li>
-        <li><small> <i>{{this.date}} </i></small></li>
-        {{/each}}
+        <div class="postbox" style="overflow-wrap: break-word;">
+          <div class="postbox2" style="overflow-wrap: break-word;">
+          <br>
+
+        <b>{{this.ownername}}</b> posted:
         <br>
-        <form id="like-post" action="/posts/like" method="post">
-          <input type="hidden" name="post_id" value="{{this._id}}">
-          <button type="submit" title="{{this.liked_by}}">👍{{this.likes}}</button>
-        </form>
+        <br>
+        {{this.message}}
+        <br>
+        <br>
+        <small>on <i>{{this.date}} </i></small>
+        <br>
+        <br>
+      </div>
+      <div class="postbox2" style="overflow-wrap: break-word;">
+        <br>
+        Comments:
+      <br>
+      <br>
+      <div class="postbox2" style="overflow-wrap: break-word;">
+        {{#each this.comments}}
+        {{this.owner}} commented: {{this.message}}
+        <br>
+        <br>
+        <small> <i>{{this.date}} </i></small>
+        <br>
+        <br>
+        </div>
+<div class="postbox2" style="overflow-wrap: break-word;">
+        {{/each}}
+      </div>
+      <br>
+        <div class="alignbutton">
         <form id="comment-post" action="/posts/comment" method="post">
           <input type="hidden" name="post_id" value="{{this._id}}">
-          <input type="text" name="comment"> <button type="submit" value="comment">Comment</button>
+          <input type="text" name="comment"> <button class="button button1" type="submit" value="comment">Comment</button>
         </form>
+        </div>
+        <div class="alignbutton">
+        <form id="like-post" action="/posts/like" method="post">
+          <input type="hidden" name="post_id" value="{{this._id}}">
+          <button class="button button1" type="submit" title="{{this.liked_by}}">🧊{{this.likes}}</button>
+        </form>
+        </div>
+        <br>
+        <br>
         {{/each}}
-      </ul>
+
+        </div>
+    </div>
     </div>
   </body>
