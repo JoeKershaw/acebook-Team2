@@ -5,7 +5,7 @@ body {
   font-family: 'Montserrat', sans-serif; font-size: 18px;
 
    background-image: linear-gradient(to bottom right, #7CACF7, #6BB1D6, #83E4ED, #83E4ED, #83E4ED, #6BB1D6, #7CACF7);
-   height: 800px;
+   height: 1000px;
 
 
 }
@@ -20,6 +20,7 @@ body {
 
 .text{
   text-align: center;
+
 }
 
 #logout {
@@ -40,7 +41,7 @@ body {
 h1{
   text-align: center;
   color: white;
-
+/* outline: 5px dotted green; */
   /* background: black; */
 
   font-size: 50px
@@ -68,12 +69,21 @@ textarea {
 }
 
 .postbox {
-  border-width: 5px;
-  border-color: #0F3896;
-  border-style: solid;
-  height: 150px;
+
+  outline: 10px solid #0F3896;
 }
 
+.postbox2 {
+
+  outline: 2px solid #0F3896;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+    vertical-align: middle;
+}
 
 /* #indexbg {
   height: 200px;
@@ -87,24 +97,11 @@ textarea {
 
 
 
-button {
-  font-family: 'Montserrat', sans-serif; font-size: 20px;
-  background-color: #E01691;
-  /* background-color: #B6E022; */
-  color: white;
-  padding: 6px 20px;
-  text-align: center;
-  display: inline-block;
-
-  transition-duration: 0.5s;
-  cursor: pointer;
-  /* montse */
-  /* border: 1.5px solid #242424; */
-  border-radius: 25px;
 
 }
 
 .button {
+
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -119,12 +116,22 @@ button {
 }
 
 .button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #4CAF50;
+  font-family: 'Montserrat', sans-serif; font-size:24px;
+padding: 6px 20px;
+transition-duration: 0.5s;
+  background-color: blue;
+  color: cyan;
+  padding: 6px 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 25px;
+  cursor: pointer;
+  size: 10px
+
 }
 
  .button1:hover {
-  background-color: #4CAF50;
-  color: white;
+   background-color: cyan;
+   color: blue;
+   border: 5px solid blue;
 }
