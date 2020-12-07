@@ -14,7 +14,7 @@ var HomeController = {
     res.render('home/login', { title: 'IceBook', message: req.flash('failMessage') });
   },
   Logout: function(req, res) {
-    req.session.destroy
+    req.session.destory;
     res.render('home/login', {title: 'IceBook' });
   },
   LoginUser: function(req,res) {
