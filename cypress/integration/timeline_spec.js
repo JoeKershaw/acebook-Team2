@@ -37,7 +37,7 @@ describe('Timeline', function() {
     signUpUser()
 
     cy.get('#new-post-form1').find('[name="message"]').type('This is a post');
-    cy.get('body').find('img').should('have.attr','src').should('include','LOGO');
+    cy.get('div').find('[class="tlposts"]').should('have.attr','src').should('include','LOGO');
   });
 
 });
